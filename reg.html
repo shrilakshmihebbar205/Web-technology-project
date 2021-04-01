@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid grey;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: grey;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            font-size: large;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbutton {
+            width: auto;
+            padding: 10px 18px;
+            background-color: red;
+
+
+        }
+
+        .container {
+            padding: 16px;
+
+
+        }
+
+        span.password {
+            float: right;
+            padding-top: 16px;
+            font-size: small;
+        }
+
+        .login {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            /* sits on the top*/
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /*enable scroll if needed*/
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .login-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 15% from the top and center*/
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            /*position it in the top right corner outside the modal*/
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: black;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s;
+        }
+
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+
+
+
+        form {
+            border: 3px solid black;
+            width: 50%;
+
+        }
+
+
+        img.bg {
+
+            width: 60%;
+            height: 400px;
+            position: relative;
+            image-rendering: pixelated;
+            top: 0;
+            left: 0;
+        }
+
+        @media screen and (max-width: 1024px) {
+            img.bg {
+                left: 50%;
+                margin-left: -512px;
+            }
+        }
+
+
+        @media screen and (max-width:300px) {
+            span.password {
+                display: block;
+                float: none;
+            }
+
+            .cancelbutton {
+                width: 100%;
+            }
+        }
+
+        button.size {
+            width: 20%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+
+        body,
+        html {
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(219, 218, 219, 0.87)
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url("background1.png");
+            /* Add the blur effect */
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Position text in the middle of the page/image */
+
+        .bg-text {
+            background-color: rgb(15, 14, 14);
+            /* Fallback color */
+            background-color: rgba(14, 13, 13, 0.4);
+            /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: x-large;
+            /*border: 3px solid #f1f1f1;*/
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            height: 70%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        body.solid {
+            border-style: solid;
+        }
+
+        #a10 {
+            color: grey;
+            font-style: normal;
+            font-size: small;
+
+        }
+
+        #a11 {
+            color: grey;
+            font-style: normal;
+            font-size: small;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-image"></div>
+    <div class="bg-text">
+
+
+        <h4>New user?</h4>
+        
+        <button class="size" onclick="document.getElementById('id-1').style.display='block'" width="50px">Sign
+            up</button></a>
+        <h4>Already have an account?</h4>
+       
+        <button class="size" onclick="document.getElementById('id-2').style.display='block'" width="50px">Sign
+            in</button></a>
+
+
+
+        <div id="id-1" class="login">
+            <span onclick="document.getElementById('id-1').style.display='none'" class="close"
+                title="close modal">&times;</span>
+
+
+
+
+
+            <form class="login-content animate" action="reg.html" method="POST">
+
+
+                <div class="container">
+                    <label for="username"><b>user name</b></label>
+                    <input type="text" placeholder="Enter username" name="user" required>
+                        <fieldset>
+                            <label for="password"><b>password</b></label>
+                            <input type="password" maxlength="10" placeholder="Password" id="password" name="pass" required>
+                           
+                            <label for="password"><b>confirm password</b></label>
+                            <input type="password" name="pass" maxlength="10" placeholder="confirm Password" id="confirm_password"
+                                required>
+                            <button type="submit" class="pure-button pure-button-primary">login</button>
+                        </fieldset>
+                    
+                        <script>   
+                        var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
+
+                            function validate() {
+                                if (password.value != confirm_password.value) {
+                                    confirm_password.setCustomValidity("passwords do not match!");
+                                }
+                                else {
+                                    confirm_password.setCustomValidity('');
+                                }
+                            }
+                            password.onchange = validate;
+                            confirm_password.onkeyup = validate;
+                        </script>
+
+
+                   
+                    <label id="a10">
+                        <input type="checkbox" checked="checked" name="remember">do you want us to remember password?
+                    </label>
+
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id-1').style.display='none'"
+                            class="cancelbutton">Cancel</button>
+
+                    </div>
+               
+
+
+        </div>
+        </form>
+</div>
+
+
+
+        <div id="id-2" class="login">
+            <span onclick="document.getElementById('id-2').style.display='none'" class="close"
+                title="close modal">&times;</span>
+
+
+
+
+
+            <form class="login-content animate" action="Cart.php" method="POST">
+
+
+                <div class="container">
+                    <label for="username"><b>user name</b></label>
+                    <input type="text" placeholder="Enter username" name="user" required>
+
+                    <label for="password"><b>password</b></label>
+                    <input type="password" maxlength="10" placeholder="Enter password" name="pass" required>
+
+                    <button type="submit">Login</button>
+                    <label id="a11">
+                        <input type="checkbox" checked="checked" name="remember">do you want us to remember the password
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id-2').style.display='none'"
+                        class="cancelbutton">Cancel</button>
+                    <span class="password"><a href="reg.html">Forgot password?</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById(id - 1);
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1084 @@
+<!doctype html>
+<html>
+<title>
+    second hand books
+</title>
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    
+
+
+<style>
+    ul {
+        list-style-type: none;
+        /*removes bullets from unordered list*/
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(15, 15, 15);
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        /*makes the whole link area clickable*/
+        color: white;
+        text-align: center;
+        font-size: 20;
+        font-style: normal;
+        padding: 16px;
+        width: 250px;
+        text-decoration: none;
+    }
+    
+    img.slides {
+        width: 100%;
+        height: 600px;
+    }
+    
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: larger;
+        background-color: white;
+    }
+    
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+        /*time taken to open side navigation*/
+    }
+    
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+        color: #f3f1f1;
+    }
+    
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    
+    @media screen and (max-height:450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+    
+    ul a:hover {
+        background-color: #818181;
+    }
+    /* Style the tab */
+    /* Change background color of buttons on hover */
+    
+    .tab button:hover {
+        background-color: #ddd;
+    }
+    /* Create an active/current "tab button" class */
+    
+    .tab button.active {
+        background-color: #ccc;
+    }
+    /* Style the tab content */
+    
+    .tabcontent {
+        border: 1px solid #ccc;
+    }
+    
+    .dropbtn {
+        background-color: rgb(21, 50, 107);
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        font-family: 'Times New Roman', Times, serif;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: rgb(113, 118, 121);
+    }
+    
+    #myInput {
+        box-sizing: border-box;
+        background-image: url('searchicon.png');
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        border: 1px solid #ddd;
+    }
+    
+    #myInput:focus {
+        outline: 3px solid #ddd;
+    }
+    
+    .dropdown {
+        /*  float: left;*/
+        align-content: left;
+        width: 15%;
+        height: 300px;
+        position: relative;
+        /*display: inline-block;*/
+    }
+    
+    .dropdown-content {
+        display: none;
+        /* position: absolute;*/
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        /*border: 1px solid #ddd;*/
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+    
+    .show {
+        display: block;
+    }
+    
+    .tabel1 {
+        width: 100%;
+        height: 60%;
+        position: relative;
+        left: 80px;
+        top: 50px;
+    }
+    
+    .tabcontent {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        left: 80px;
+        top: 50px;
+    }
+    
+    #a1 {
+        line-height: 40px;
+        margin: 0 0 16px;
+        position: relative;
+        font-weight: 300;
+        color: #243d5a;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 85px;
+    }
+    
+    #a2 {
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(65, 80, 88);
+    }
+    
+    #a3 {
+        position: relative;
+        top: 140px;
+        left: 240px;
+        border-radius: 5%;
+    }
+    
+    .t2 {
+        float: left;
+        flex: 16.66%;
+        padding: 1px;
+    }
+    
+    .t3 {
+        float: left;
+        flex: 25%;
+        padding: 1px;
+    }
+    
+    .t4 {
+        float: left;
+        flex: 33.33%;
+        padding: 1px;
+    }
+    
+    .t1::after {
+        display: flex;
+    }
+    
+    .set {
+        background-color: rgb(214, 224, 236);
+    }
+    
+    .buttn {
+        background-color: rgb(12, 69, 107);
+        border: none;
+        color: white;
+        padding: 10px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="set">
+        <img id="a3" src="Logo.jpg" alt="unavailable" width="200px" height="180px" />
+        <h1 id="a1">
+            <center><b>Book Factory</b></center>
+        </h1>
+        <br>
+
+        <h3 id="a2">
+            <center>Online portal for second hand books</center>
+        </h3>
+        <br>
+
+
+
+
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="blog.html">Blog</a>
+            <a href="featured_authors.html">featured authors</a>
+            <a href="best_seller.html">Best sellers</a>
+            <a href="combos.html">Save more with combo</a>
+            <a href="contact_us.html">Contact us</a>
+
+
+        </div>
+        <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+        <br>
+        <br>
+    </div>
+    <ul>
+        <li><a href="index.html">Home </a></li>
+        <li><a href="reg.html">Register</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="privacy_policy.html">Privacy policy</a></li>
+        <li><a href="about_us.html">About us </a></li>
+
+
+    </ul>
+
+    <img class="slides" src="slideshow1.png">
+    <img class="slides" src="slideshow8.png">
+    <img class="slides" src="slideshow7.png">
+    <img class="slides" src="slideshow2.png">
+    <img class="slides" src="slideshow3.png">
+    <img class="slides" src="slideshow4.png">
+
+    <br>
+
+
+
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Search by catagories</button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search" id="myInput" onkeyup="filterFunction()">
+            <br>
+
+            <button class="tablinks" onclick="hide1()">Thriller</button><br>
+            <button class="tablinks" onclick="hide2()">horror</button><br>
+            <button class="tablinks" onclick="hide3()">comics</button>
+        </div>
+
+    </div>
+
+    <table class="tabel1">
+        <tr>
+
+            <td>
+
+
+                <div class="Thriller" class="tabcontent">
+                    <img src="harrypotter.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Harry Potter and the Sorcerer's Stone</h3>
+                    <h4>(Harry Potter #1) by J.K. Rowling, <br>Mary GrandPr (Illustrator)</h4>
+                    <p> Rating details: 6,144,136 ratings 94,580 reviews</br>
+                        <h3><del>price: Rs.450/-</del><br> Rs.210/-
+                        </h3>
+                    </p>
+
+
+
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <p> </p>
+                            <a href="details_harrypotter.html">details</a>
+                            <br>
+                            <p> </p>
+                            <a href="reg.html" class="buttn">Add to cart</a>
+                        </div>
+                        <br>
+
+
+                    </div>
+
+            </td>
+            <td>
+                <div class="Thriller" class="tabcontent">
+
+                    <img src="pride&prejudice.jpg" alt="unavailable" height="310px" width="200px" />
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Pride and Prejudice</h3>
+                    <h4>Pride and Prejudice by Jane Austen, Anna Quindlen</h4>
+                    <p>Rating details :2,654,160 ratings 58,610 reviews<br>
+                    </p>
+                    <h3><del>price:Rs.300/- </del><br> Rs.150/-
+                    </h3>
+
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t4">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t4">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t4">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p> </p>
+                        <a href="details_p&p.html">details</a>
+
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+                    </div>
+
+
+            </td>
+
+            <td>
+
+
+
+                <div class="Thriller" class="tabcontent">
+                    <img src="shape of night.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">The shape of night</h3>
+
+                    <h4>The Shape of Night by Tess Gerritsen </h4>
+                    <p> Rating details: 1,957 ratings 583 reviews <br></p>
+
+
+                    <h3><del>price:Rs.470/- </del>
+                        <br>Rs.360/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p> </p>
+
+                        <a href="details_shapeofnight.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+                    </div>
+            </td>
+
+        </tr>
+        <tr allign="right">
+
+            <td>
+
+
+                <div class="Thriller" class="tabcontent">
+                    <img src="the_nugget.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">The Nugget</h3>
+
+                    <h4>The Nugget (World War II Navy #6)<br> by P.T. Deutermann </h4>
+                    <p>Rating details: 95 ratings 19 reviews<br></p>
+
+                    <h3><del>price:Rs.200/- </del><br> Rs.145/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p></p>
+                        <a href="details_thenugget.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+                    </div>
+            </td>
+
+
+            <td>
+
+
+                <div class="Thriller" class="tabcontent">
+                    <img src="Curious toys.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Curious Toys</h3>
+
+                    <h4> Curious Toys by Elizabeth Hand</h4>
+                    <p> Rating details: 143 ratings 45 reviews<br></p>
+                    <h3><del>price:Rs.300/-</del><br> Rs.210/- </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+
+                        <p></p>
+                        <a href="details_curioustoys.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+
+                    </div>
+            </td>
+
+
+            <td>
+
+
+                <div class="Comics" class="tabcontent">
+                    <img src="mooncakes.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Moon cakes</h3>
+
+                    <h4>Mooncakes by Suzanne Walker, Wendy Xu (Artist)</h4>
+                    <p> Rating details :2,229 ratings 1,263 reviews<br></p>
+                    <h3><del>price:Rs.280/-</del><br> Rs.195/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p></p>
+                        <a href="details_mooncakes.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+                    </div>
+            </td>
+        </tr>
+        <tr>
+
+
+            <td>
+                <div class="Comics" class="tabcontent">
+                    <img src="OLIVER_TWIST.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Oliver Twist</h3>
+
+                    <h4>by Charles Dickens, Philip Horne,(Introduction)<br> Gerald Dickens (Narrator)</h4>
+                    <p> Rating details: 292,360 ratings 6,714 reviews<br></p>
+                    <h3><del>price:Rs.200/- </del><br> Rs.169/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t4">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t4">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t4">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div><br>
+                        <p> </p>
+
+                        <a href="details_olivertwist.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+
+                    </div>
+            </td>
+
+
+            <td>
+                <div class="Comics" class="tabcontent">
+                    <img src="through the woods.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Through the woods</h3>
+
+                    <h4>Through the Woods by Emily Carroll</h4>
+                    <p> Rating details : 52,668 ratings 6,741 reviews<br></p>
+
+                    <h3><del>price:Rs.360/- </del><br> Rs.297/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+
+                        <p></p>
+
+                        <a href="details_throughthewoods.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+
+                    </div>
+            </td>
+
+            <td>
+                <div class="Horror" class="tabcontent">
+                    <img src="Bone parish.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Bone parish</h3>
+
+                    <h4>Bone Parish, Vol. 2 by Cullen Bunn<br></h4>
+                    <p> Rating details : 49 ratings 4 reviews</p>
+
+                    <h3><del>price:Rs.280/- </del><br> Rs.250/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p></p>
+                        <a href="details_boneparish.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+
+                    </div>
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>
+
+
+                <div class="Horror" class="tabcontent">
+                    <img src="angel.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Angel</h3>
+
+                    <h4>Angel Vol. 1: Being Human (Angel 0-4) by Bryan Hill, <br>Joss Whedon (Creator), Gleb Melnikov, <br> Gabriel Cassata, Roman Titov, Dan Panosian</h4>
+                    <p>Rating details :66 ratings 14 reviews<br></p>
+                    <h3><del>price:Rs.266/- </del><br> Rs.230/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p></p>
+
+
+                        <a href="details_angel.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+
+                    </div>
+            </td>
+
+
+
+            <td>
+                <div class="Horror" class="tabcontent">
+                    <img src="resurection.jpg" alt="unavailable" height="300px" width="200px" />
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Resurrection girls</h3>
+                    <h4>Resurrection girls by Ava Morgyn </h4>
+                    <p> Rating details :193 ratings 142 reviews<br></p>
+                    <h3><del>price:Rs.468/-</del><br> Rs.380/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+
+                        <p></p>
+
+
+                        <a href="details_resurection.html">details</a>
+                        <p> </p>
+
+                        <a href="reg.html" class="buttn">Add to cart</a>
+                    </div>
+
+            </td>
+
+
+
+
+            <td>
+
+
+                <div class="Horror" class="tabcontent">
+                    <img src="twisted ones.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">the twisted ones</h3>
+
+                    <h4>The Twisted Ones by T. Kingfisher</h4>
+                    <p>Rating details: 1,124 ratings 266 reviews<br></p>
+                    <h3><del>price:Rs.460/-</del><br> Rs.355/- </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t4">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t4">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t4">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p> </p>
+
+
+                        <a href="details_twistedones.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+                    </div>
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>
+
+
+                <div class="Horror" class="tabcontent">
+                    <img src="one_by_one.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">One by one</h3>
+
+                    <h4>One by One by D.W. Gillespie</h4>
+                    <p>Rating details 142 ratings 120 reviews<br></p>
+                    <h3><del>price:Rs.500/-</del><br> Rs.430/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t2">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t2">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+
+                        <p></p>
+
+
+
+                        <a href="details_one_by_one.html">details</a>
+                        <p> </p>
+                        <a href="reg.html" class="buttn">Add to cart</a>
+
+                    </div>
+            </td>
+
+
+            <td>
+
+
+                <div class="Horror" class="tabcontent">
+                    <img src="imaginary_friend.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;">Imaginary Friend</h3>
+
+                    <h4>
+                        Imaginary Friend by Stephen Chbosky </h4>
+                    <p>Rating details :3,184 ratings 1,050 reviews
+                        <br></p>
+                    <h3><del>price:Rs.111/-</del><br> Rs.100/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p></p>
+
+
+                        <a href="details_imaginary_friends.html">details</a>
+                        <p> </p>
+
+                        <a href="reg.html" class="buttn">Add to cart</a>
+                    </div>
+            </td>
+
+
+            <td>
+
+
+                <div class="Horror" class="tabcontent">
+                    <img src="tale of two cities.jpg" alt="unavailable" height="300px" width="200px" />
+
+                    <h3 style=" color:#5c0a0a; font-size:x-large;"> A Tale of Two Cities</h3>
+
+                    <h4>
+                        A Tale of Two Cities by Charles Dickens, <br>Richard Maxwell (Editor/Introduction)</h4>
+                    <p>Rating details:759,286 ratings 15,851 reviews<br></p>
+                    <h3><del>price:Rs.380/-</del><br> Rs.260/-
+                    </h3>
+                    <p>Book condition:</p>
+                    <div class="t1">
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                        </div>
+                        <div class="t3">
+                            <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+
+
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                            <div class="t3">
+                                <img src="star.jpg" alt="unavailable" width="20px" height="15px">
+                            </div>
+                        </div>
+                        <br>
+                        <p></p>
+
+
+                        <a href="details_taleoftwocities.html">details</a>
+                        <p> </p>
+
+                        <a href="reg.html" class="buttn">Add to cart</a>
+                    </div>
+            </td>
+    </table>
+
+    </div>
+
+</body>
+
+<script>
+    var index = 0;
+    slide();
+
+    function slide() {
+        var i;
+        var x = document.getElementsByClassName("slides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+
+        }
+        index++;
+        if (index > x.length) {
+
+            index = 1;
+        }
+        x[index - 1].style.display = "block";
+        setTimeout(slide, 3000);
+    }
+
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+
+    }
+
+
+
+
+
+    function hide1() {
+        var x = document.getElementsByClassName("Horror");
+        var y = document.getElementsByClassName("Comics");
+        var z = document.getElementsByClassName("Thriller");
+        var j = 0;
+        for (j = 0; j < z.length; ++j) {
+            z[j].style.display = "block";
+
+
+        }
+        var j = 0;
+        for (j = 0; j < x.length; ++j) {
+            x[j].style.display = "none";
+        }
+        var j = 0;
+        for (j = 0; j < y.length; ++j) {
+            y[j].style.display = "none";
+        }
+    }
+
+
+
+    function hide2() {
+        var x = document.getElementsByClassName("Thriller");
+        var y = document.getElementsByClassName("Comics");
+        var z = document.getElementsByClassName("Horror");
+        var j = 0;
+        for (j = 0; j < z.length; ++j) {
+            z[j].style.display = "block";
+            z[0].style.display = "none";
+
+
+        }
+        var j = 0;
+        for (j = 0; j < x.length; ++j) {
+            x[j].style.display = "none";
+        }
+        var j = 0;
+        for (j = 0; j < y.length; ++j) {
+            y[j].style.display = "none";
+        }
+    }
+
+
+    function hide3() {
+        var x = document.getElementsByClassName("Horror");
+        var y = document.getElementsByClassName("Thriller");
+        var z = document.getElementsByClassName("Comics");
+        var j = 0;
+        for (j = 0; j < z.length; ++j) {
+            z[j].style.display = "block";
+            z[j].style.position = "absolute";
+
+        }
+        var j = 0;
+        for (j = 0; j < x.length; ++j) {
+            x[j].style.display = "none";
+        }
+        var j = 0;
+        for (j = 0; j < y.length; ++j) {
+            y[j].style.display = "none";
+        }
+    }
+
+
+
+
+
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("button");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</html>
